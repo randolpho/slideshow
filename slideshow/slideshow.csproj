@@ -8,7 +8,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Folder Include="lib" />
         <Folder Include="Models\" />
         <AvaloniaResource Include="Assets\**" />
         <None Remove=".gitignore" />
@@ -38,12 +37,5 @@
 
     <ItemGroup>
       <None Remove="lib\runtimes\linux-arm\native\libSkiaSharp.so" />
-      <AdditionalFiles Include="lib\runtimes\linux-arm\native\libSkiaSharp.so">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </AdditionalFiles>
     </ItemGroup>
-
-    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-      <Exec Command="cp -fr $(OutDir)/lib/runtimes/* $(OutDir)/runtimes" />
-    </Target>
 </Project>
